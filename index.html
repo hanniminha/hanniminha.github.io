@@ -2,84 +2,297 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Feliz Aniversário 💗</title>
+<title>Jennifer 💖</title>
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #ff9ecf, #ffc2e2);
-    color: white;
-    overflow: hidden;
+  margin: 0;
+  background: linear-gradient(to bottom, #ffb6d9, #ff69b4);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  overflow-x: hidden;
 }
 
 h1 {
-    margin-top: 80px;
-    font-size: 38px;
+  margin-top: 60px;
+  font-size: 45px;
 }
 
-p {
-    font-size: 20px;
-    max-width: 300px;
-    margin: 20px auto;
+.nome {
+  font-size: 60px;
+  font-weight: bold;
+  animation: brilho 2s infinite alternate;
+}
+
+@keyframes brilho {
+  from { text-shadow: 0 0 10px white; }
+  to { text-shadow: 0 0 25px #ff1493; }
+}
+
+.datas {
+  margin-top: 20px;
+  font-size: 18px;
 }
 
 button {
-    margin-top: 30px;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 30px;
-    background: white;
-    color: #ff4da6;
-    font-size: 18px;
+  background: white;
+  color: #ff1493;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+button:hover {
+  background: #ffe4f2;
+}
+
+#carta {
+  display: none;
+  margin: 30px auto;
+  width: 85%;
+  max-width: 500px;
+  background: white;
+  color: #ff1493;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .heart {
-    position: absolute;
-    color: #ff4da6;
-    animation: fall linear infinite;
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall 5s linear infinite;
 }
 
 @keyframes fall {
-    0% { transform: translateY(-10%); opacity: 1; }
-    100% { transform: translateY(110vh); opacity: 0; }
+  to {
+    transform: translateY(100vh);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<h1>Feliz Aniversário, Meu Amor 💗</h1>
+<h1>Feliz Aniversário 💖</h1>
+<div class="nome">Jennifer ✨</div>
 
-<p>
-Você é o meu lugar seguro, o meu sorriso favorito e a melhor parte de todos os meus dias.
-Eu sou muito grata por ter você na minha vida.
-</p>
+<div class="datas">
+  <p id="inicio"></p>
+  <p id="declaracao"></p>
+  <p id="namoro"></p>
+</div>
 
-<button onclick="mensagem()">Clique aqui 💞</button>
+<button onclick="abrirCarta()">Abrir minha declaração 💌</button>
+
+<div id="carta">
+  <h3>Para você, Jennifer 💗</h3>
+  <p>
+    Desde 20 de maio de 2025 minha vida começou a mudar.  
+    No dia 27 de outubro eu tive coragem de dizer o que meu coração já sabia.  
+    E no dia 1º de janeiro de 2026 começou oficialmente a melhor parte da minha vida.  
+    Você é meu presente, meu sorriso e meu futuro.  
+    Eu te amo infinitamente 💖✨
+  </p>
+</div>
+
+<!-- Música -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g"
+frameborder="0" allow="autoplay">
+</iframe>
 
 <script>
-function mensagem() {
-    alert("Eu te amo mais do que qualquer palavra consegue explicar 💗✨");
+
+function diasDesde(data) {
+  let hoje = new Date();
+  let diferenca = hoje - data;
+  return Math.floor(diferenca / (1000 * 60 * 60 * 24));
 }
 
-function criarCoracoes() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "💗";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 20 + 20 + "px";
-    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
-    document.body.appendChild(heart);
+let inicio = new Date("2025-05-20");
+let declaracao = new Date("2025-10-27");
+let namoro = new Date("2026-01-01");
 
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
+document.getElementById("inicio").innerHTML =
+  "Conversando há " + diasDesde(inicio) + " dias 💕";
+
+document.getElementById("declaracao").innerHTML =
+  "Desde que me declarei: " + diasDesde(declaracao) + " dias 💌";
+
+document.getElementById("namoro").innerHTML =
+  "Namorando há " + diasDesde(namoro) + " dias 💍";
+
+function abrirCarta() {
+  document.getElementById("carta").style.display = "block";
 }
 
-setInterval(criarCoracoes, 400);
+setInterval(function() {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}, 300);
+
 </script>
 
 </body>
-</html>
+</html><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jennifer 💖</title>
+
+<style>
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #ffb6d9, #ff69b4);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin-top: 60px;
+  font-size: 45px;
+}
+
+.nome {
+  font-size: 60px;
+  font-weight: bold;
+  animation: brilho 2s infinite alternate;
+}
+
+@keyframes brilho {
+  from { text-shadow: 0 0 10px white; }
+  to { text-shadow: 0 0 25px #ff1493; }
+}
+
+.datas {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+button {
+  background: white;
+  color: #ff1493;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+button:hover {
+  background: #ffe4f2;
+}
+
+#carta {
+  display: none;
+  margin: 30px auto;
+  width: 85%;
+  max-width: 500px;
+  background: white;
+  color: #ff1493;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Feliz Aniversário 💖</h1>
+<div class="nome">Jennifer ✨</div>
+
+<div class="datas">
+  <p id="inicio"></p>
+  <p id="declaracao"></p>
+  <p id="namoro"></p>
+</div>
+
+<button onclick="abrirCarta()">Abrir minha declaração 💌</button>
+
+<div id="carta">
+  <h3>Para você, Jennifer 💗</h3>
+  <p>
+    Desde 20 de maio de 2025 minha vida começou a mudar.  
+    No dia 27 de outubro eu tive coragem de dizer o que meu coração já sabia.  
+    E no dia 1º de janeiro de 2026 começou oficialmente a melhor parte da minha vida.  
+    Você é meu presente, meu sorriso e meu futuro.  
+    Eu te amo infinitamente 💖✨
+  </p>
+</div>
+
+<!-- Música -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g"
+frameborder="0" allow="autoplay">
+</iframe>
+
+<script>
+
+function diasDesde(data) {
+  let hoje = new Date();
+  let diferenca = hoje - data;
+  return Math.floor(diferenca / (1000 * 60 * 60 * 24));
+}
+
+let inicio = new Date("2025-05-20");
+let declaracao = new Date("2025-10-27");
+let namoro = new Date("2026-01-01");
+
+document.getElementById("inicio").innerHTML =
+  "Conversando há " + diasDesde(inicio) + " dias 💕";
+
+document.getElementById("declaracao").innerHTML =
+  "Desde que me declarei: " + diasDesde(declaracao) + " dias 💌";
+
+document.getElementById("namoro").innerHTML =
+  "Namorando há " + diasDesde(namoro) + " dias 💍";
+
+function abrirCarta() {
+  document.getElementById("carta").style.display = "block";
+}
+
+setInterval(function() {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💗";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}, 300);
+
+</script>
+
+</body>
+    </
+    
