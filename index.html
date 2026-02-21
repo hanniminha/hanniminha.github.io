@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Jennifer 💖</title>
+<title>Para Jennifer 💖</title>
 
 <style>
 body {
   margin: 0;
-  background: linear-gradient(to bottom, #ffb6d9, #ff69b4);
+  background: linear-gradient(135deg, #1a0026, #330033, #4d004d);
   font-family: Arial, sans-serif;
   text-align: center;
   color: white;
@@ -16,294 +16,85 @@ body {
 
 h1 {
   margin-top: 60px;
-  font-size: 45px;
-}
-
-.nome {
-  font-size: 60px;
-  font-weight: bold;
-  animation: brilho 2s infinite alternate;
-}
-
-@keyframes brilho {
-  from { text-shadow: 0 0 10px white; }
-  to { text-shadow: 0 0 25px #ff1493; }
-}
-
-.datas {
-  margin-top: 20px;
-  font-size: 18px;
+  font-size: 42px;
+  color: #ff66c4;
+  text-shadow: 0 0 10px #ff66c4, 0 0 20px #ff1493;
 }
 
 button {
-  background: white;
-  color: #ff1493;
+  margin-top: 30px;
+  background: #ff1493;
   border: none;
-  padding: 15px 30px;
-  font-size: 18px;
+  padding: 14px 30px;
   border-radius: 30px;
-  cursor: pointer;
-  margin-top: 25px;
-}
-
-button:hover {
-  background: #ffe4f2;
-}
-
-#carta {
-  display: none;
-  margin: 30px auto;
-  width: 85%;
-  max-width: 500px;
-  background: white;
-  color: #ff1493;
-  padding: 20px;
-  border-radius: 20px;
-}
-
-.heart {
-  position: fixed;
-  top: -10px;
-  font-size: 20px;
-  animation: fall 5s linear infinite;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(100vh);
-  }
-}
-</style>
-</head>
-
-<body>
-
-<h1>Feliz Aniversário 💖</h1>
-<div class="nome">Jennifer ✨</div>
-
-<div class="datas">
-  <p id="inicio"></p>
-  <p id="declaracao"></p>
-  <p id="namoro"></p>
-</div>
-
-<button onclick="abrirCarta()">Abrir minha declaração 💌</button>
-
-<div id="carta">
-  <h3>Para você, Jennifer 💗</h3>
-  <p>
-    Desde 20 de maio de 2025 minha vida começou a mudar.  
-    No dia 27 de outubro eu tive coragem de dizer o que meu coração já sabia.  
-    E no dia 1º de janeiro de 2026 começou oficialmente a melhor parte da minha vida.  
-    Você é meu presente, meu sorriso e meu futuro.  
-    Eu te amo infinitamente 💖✨
-  </p>
-</div>
-
-<!-- Música -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g"
-frameborder="0" allow="autoplay">
-</iframe>
-
-<script>
-
-function diasDesde(data) {
-  let hoje = new Date();
-  let diferenca = hoje - data;
-  return Math.floor(diferenca / (1000 * 60 * 60 * 24));
-}
-
-let inicio = new Date("2025-05-20");
-let declaracao = new Date("2025-10-27");
-let namoro = new Date("2026-01-01");
-
-document.getElementById("inicio").innerHTML =
-  "Conversando há " + diasDesde(inicio) + " dias 💕";
-
-document.getElementById("declaracao").innerHTML =
-  "Desde que me declarei: " + diasDesde(declaracao) + " dias 💌";
-
-document.getElementById("namoro").innerHTML =
-  "Namorando há " + diasDesde(namoro) + " dias 💍";
-
-function abrirCarta() {
-  document.getElementById("carta").style.display = "block";
-}
-
-setInterval(function() {
-  let heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "💗";
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
-}, 300);
-
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Jennifer 💖</title>
-
-<style>
-body {
-  margin: 0;
-  background: linear-gradient(to bottom, #ffb6d9, #ff69b4);
-  font-family: Arial, sans-serif;
-  text-align: center;
   color: white;
-  overflow-x: hidden;
-}
-
-h1 {
-  margin-top: 60px;
-  font-size: 45px;
-}
-
-.nome {
-  font-size: 60px;
-  font-weight: bold;
-  animation: brilho 2s infinite alternate;
-}
-
-@keyframes brilho {
-  from { text-shadow: 0 0 10px white; }
-  to { text-shadow: 0 0 25px #ff1493; }
-}
-
-.datas {
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-button {
-  background: white;
-  color: #ff1493;
-  border: none;
-  padding: 15px 30px;
-  font-size: 18px;
-  border-radius: 30px;
+  font-size: 16px;
   cursor: pointer;
-  margin-top: 25px;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: #ffe4f2;
+  background: #ff66c4;
+  transform: scale(1.05);
 }
 
-#carta {
+.carta {
   display: none;
-  margin: 30px auto;
+  margin: 40px auto;
+  padding: 25px;
   width: 85%;
-  max-width: 500px;
-  background: white;
-  color: #ff1493;
-  padding: 20px;
+  max-width: 600px;
+  background: rgba(255,255,255,0.1);
   border-radius: 20px;
+  backdrop-filter: blur(10px);
+  line-height: 1.6;
+  animation: aparecer 1.5s ease forwards;
 }
 
-.heart {
-  position: fixed;
-  top: -10px;
-  font-size: 20px;
-  animation: fall 5s linear infinite;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(100vh);
-  }
+@keyframes aparecer {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<h1>Feliz Aniversário 💖</h1>
-<div class="nome">Jennifer ✨</div>
+<h1>Feliz Aniversário, Jennifer ✨💖</h1>
 
-<div class="datas">
-  <p id="inicio"></p>
-  <p id="declaracao"></p>
-  <p id="namoro"></p>
-</div>
+<button onclick="mostrarCarta()">Abrir minha carta 💌</button>
 
-<button onclick="abrirCarta()">Abrir minha declaração 💌</button>
+<div class="carta" id="carta">
+  Oii meu amor, passando aqui pra te desejar um feliz aniversário e dizer que eu te amo demais.<br><br>
 
-<div id="carta">
-  <h3>Para você, Jennifer 💗</h3>
-  <p>
-    Desde 20 de maio de 2025 minha vida começou a mudar.  
-    No dia 27 de outubro eu tive coragem de dizer o que meu coração já sabia.  
-    E no dia 1º de janeiro de 2026 começou oficialmente a melhor parte da minha vida.  
-    Você é meu presente, meu sorriso e meu futuro.  
-    Eu te amo infinitamente 💖✨
-  </p>
+  Eu queria muito estar com você agora mesmo. Eu te amo mais do que consigo explicar.<br><br>
+
+  Sou muito grata por ter você na minha vida. Obrigada por sempre me ajudar e por sempre estar comigo.<br><br>
+
+  Eu te amo muito, Jennifer. Obrigada por ser minha gatinha, minha namorada, meu amor todinho.<br><br>
+
+  Eu te amo muito. Quero viver todos os dias da minha vida ao seu lado e viver todos os aniversários contigo.<br><br>
+
+  Você merece as melhores coisas desse mundo, meu bem. Eu te amo demais, demais. 💖
 </div>
 
 <!-- Música -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g"
-frameborder="0" allow="autoplay">
-</iframe>
-
-<script>
-
-function diasDesde(data) {
-  let hoje = new Date();
-  let diferenca = hoje - data;
-  return Math.floor(diferenca / (1000 * 60 * 60 * 24));
-}
-
-let inicio = new Date("2025-05-20");
-let declaracao = new Date("2025-10-27");
-let namoro = new Date("2026-01-01");
-
-document.getElementById("inicio").innerHTML =
-  "Conversando há " + diasDesde(inicio) + " dias 💕";
-
-document.getElementById("declaracao").innerHTML =
-  "Desde que me declarei: " + diasDesde(declaracao) + " dias 💌";
-
-document.getElementById("namoro").innerHTML =
-  "Namorando há " + diasDesde(namoro) + " dias 💍";
-
-function abrirCarta() {
-  document.getElementById("carta").style.display = "block";
-}
-
-setInterval(function() {
-  let heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "💗";
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
-}, 300);
-
-</script>
-<div style="text-align:center; margin-top:40px;">
-  <h2 style="color:#ff4da6;">Nossa música 💖</h2>
-
+<div style="margin-top:30px; display:none;" id="musica">
   <iframe width="250" height="140"
   src="https://www.youtube.com/embed/GJNdR_MKuDM?autoplay=1&loop=1&playlist=GJNdR_MKuDM"
-  title="Reflections – The Neighbourhood"
   frameborder="0"
-  style="border-radius:15px;"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allow="autoplay; encrypted-media"
   allowfullscreen>
   </iframe>
 </div>
+
+<script>
+function mostrarCarta() {
+  document.getElementById("carta").style.display = "block";
+  document.getElementById("musica").style.display = "block";
+}
+</script>
+
 </body>
-    </
+</html>
     
