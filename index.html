@@ -2,201 +2,114 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Para Jennifer 💗</title>
+<title>Feliz Aniversário, Jennifer ❤️</title>
+
+<!-- Fonte romântica -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #ffe6f0;
+  padding: 0;
+  background: linear-gradient(to bottom, #ffd6ec, #fff0f6);
+  font-family: Arial, sans-serif;
   text-align: center;
   overflow-x: hidden;
 }
 
-/* enfeite topo */
-body::before {
-  content: "🌸  ✨  💗  🌷  ✨  🌸";
-  position: fixed;
-  top: 10px;
-  left: 0;
-  width: 100%;
-  font-size: 22px;
-  opacity: 0.2;
-}
-
-/* título */
 h1 {
-  margin-top: 70px;
-  font-size: 38px;
-  color: #ff4da6;
-  text-shadow: 0 0 8px #ffb6d9;
+  color: #ff1493;
+  margin-top: 40px;
+  font-family: 'Pacifico', cursive;
+  font-size: 42px;
 }
 
-/* botão principal */
+.carta {
+  background: white;
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  color: #444;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
 button {
-  margin-top: 20px;
-  background: #ff85c1;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 30px;
+  background-color: #ff69b4;
   color: white;
+  border: none;
+  padding: 12px 25px;
   font-size: 16px;
+  border-radius: 25px;
   cursor: pointer;
+  margin-top: 20px;
   transition: 0.3s;
-  box-shadow: 0 8px 20px rgba(255,133,193,0.4);
 }
 
 button:hover {
-  background: #ff4da6;
-  transform: scale(1.05);
+  background-color: #ff1493;
 }
 
-/* carta */
-.carta {
-  display: none;
-  background: white;
-  margin: 40px auto;
-  padding: 30px;
-  width: 85%;
-  max-width: 520px;
-  border-radius: 25px;
-  box-shadow: 0 15px 40px rgba(255,105,180,0.2);
-  line-height: 1.8;
-  color: #555;
-  animation: aparecer 1s ease forwards;
-}
-
-@keyframes aparecer {
-  from {opacity: 0; transform: scale(0.95);}
-  to {opacity: 1; transform: scale(1);}
-}
-
-/* parte história */
-.historia {
-  margin-top: 60px;
-  padding: 40px 20px;
-  background: #ffd6ea;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-}
-
-.historia h2 {
-  color: #ff4da6;
-}
-
-.frase-final {
-  margin-top: 20px;
-  font-style: italic;
-  color: #d63384;
-}
-
-/* flores caindo */
-.flores {
+.heart {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.flor {
-  position: absolute;
   top: -10px;
   font-size: 20px;
-  animation: cair linear infinite;
+  animation: fall linear infinite;
 }
 
-@keyframes cair {
-  to { transform: translateY(110vh); }
-}
-
-/* botão música */
-.botao-musica {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  background: #ffc0cb;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 20px;
-  cursor: pointer;
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<h1>Feliz Aniversário, Jennifer 💖</h1>
+<h1>Feliz Aniversário, minha Jennifer 💖</h1>
 
-<button onclick="mostrarCarta()">Abrir minha cartinha 💌</button>
-
-<div class="carta" id="carta">
-Oii meu amor, passando aqui pra te desejar um feliz aniversário e dizer que eu te amo demais.<br><br>
-Eu queria muito estar com você agora mesmo. Eu te amo mais do que consigo explicar.<br><br>
-Sou muito grata por ter você na minha vida. Obrigada por sempre me ajudar e por sempre estar comigo.<br><br>
-Eu te amo muito, Jennifer. Obrigada por ser minha gatinha, minha namorada, meu amor todinho.<br><br>
-Eu te amo muito. Quero viver todos os dias da minha vida ao seu lado e viver todos os aniversários contigo.<br><br>
-Você merece as melhores coisas desse mundo, meu bem. Eu te amo demais, demais. 💗
+<div class="carta">
+  oii meu amor passando aqui pra te desejar um feliz aniversário e que eu te amo demais, eu queria muito estar com você agora mesmo, eu te amo mais doq posso conseguir explicar, sou muito grata por ter você na minha vida, obrigada por sempre me ajudar e por sempre estar comigo, eu te amo muito jennifer, obrigada por ser minha gatinha, minha namorada, meu amor todinho, eu te amo muito, quero viver todos os dias da minha vida ao seu lado e viver todos aniversários contigo, você merece as melhores coisas desse mundo meu bem, eu te amo demais demais.
+  <br><br>
+  💞 Desde 20/05/25  
+  <br>💌 Me declarei 27/10/25  
+  <br>💍 Namorando desde 01/01/26
 </div>
 
-<div class="historia">
-  <h2>Nossa História 💞</h2>
-  <p>
-  20/05/25 💗<br>
-  27/10/25 💌<br>
-  01/01/26 ✨
-  </p>
-  <p class="frase-final">
-  Que esse seja só o começo de todos os aniversários ao seu lado.
-  </p>
-</div>
+<button onclick="tocarMusica()">🎵 Clique aqui para ouvir nossa música</button>
 
-<div class="flores"></div>
-
-<button class="botao-musica" onclick="toggleMusic()">🎵 Música</button>
-
-<iframe 
-  id="musicPlayer"
-  width="0" 
-  height="0" 
-  src="https://www.youtube.com/embed/7NOSDKb0HlU?enablejsapi=1&loop=1&playlist=7NOSDKb0HlU"
+<div id="player" style="display:none;">
+  <iframe width="0" height="0"
+  src="https://www.youtube.com/embed/46w_wj1hXac?autoplay=1&loop=1&playlist=46w_wj1hXac"
   frameborder="0"
-  allow="autoplay">
-</iframe>
+  allow="autoplay"
+  allowfullscreen>
+  </iframe>
+</div>
 
 <script>
-function mostrarCarta() {
-  document.getElementById("carta").style.display = "block";
+function tocarMusica() {
+  document.getElementById("player").style.display = "block";
 }
 
-/* flores */
-function criarFlor() {
-  const flor = document.createElement("div");
-  flor.classList.add("flor");
-  flor.innerHTML = "🌸";
-  flor.style.left = Math.random() * 100 + "vw";
-  flor.style.animationDuration = (5 + Math.random() * 5) + "s";
-  flor.style.opacity = Math.random();
-  document.querySelector(".flores").appendChild(flor);
+function criarCoracao() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "🌸";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  document.body.appendChild(heart);
 
-  setTimeout(() => { flor.remove(); }, 10000);
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
 }
-setInterval(criarFlor, 500);
 
-/* música */
-let isPlaying = false;
-function toggleMusic() {
-  const iframe = document.getElementById("musicPlayer").contentWindow;
-  if (!isPlaying) {
-    iframe.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-    isPlaying = true;
-  } else {
-    iframe.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-    isPlaying = false;
-  }
-}
+setInterval(criarCoracao, 300);
 </script>
 
 </body>
