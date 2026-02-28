@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Feliz Aniversário, Jennifer ❤️</title>
 
-<!-- Fonte romântica -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
@@ -19,12 +18,20 @@ body {
 
 h1 {
   color: #ff1493;
-  margin-top: 40px;
+  margin-top: 50px;
   font-family: 'Pacifico', cursive;
   font-size: 42px;
 }
 
+.mensagem {
+  font-size: 20px;
+  color: #555;
+  margin-top: 20px;
+}
+
 .carta {
+  opacity: 0;
+  visibility: hidden;
   background: white;
   width: 80%;
   max-width: 600px;
@@ -35,6 +42,7 @@ h1 {
   color: #444;
   font-size: 18px;
   line-height: 1.6;
+  transition: opacity 1s ease;
 }
 
 button {
@@ -53,14 +61,14 @@ button:hover {
   background-color: #ff1493;
 }
 
-.heart {
+.flor {
   position: fixed;
   top: -10px;
   font-size: 20px;
-  animation: fall linear infinite;
+  animation: cair linear infinite;
 }
 
-@keyframes fall {
+@keyframes cair {
   to {
     transform: translateY(100vh);
   }
@@ -72,15 +80,25 @@ button:hover {
 
 <h1>Feliz Aniversário, minha Jennifer 💖</h1>
 
-<div class="carta">
+<div class="mensagem">
+  Eu preparei algo especial pra você... 💌  
+  Clique abaixo quando estiver pronta.
+</div>
+
+<br>
+
+<button onclick="abrirCarta()">💌 Abrir minha carta</button>
+
+<div id="carta" class="carta">
   oii meu amor passando aqui pra te desejar um feliz aniversário e que eu te amo demais, eu queria muito estar com você agora mesmo, eu te amo mais doq posso conseguir explicar, sou muito grata por ter você na minha vida, obrigada por sempre me ajudar e por sempre estar comigo, eu te amo muito jennifer, obrigada por ser minha gatinha, minha namorada, meu amor todinho, eu te amo muito, quero viver todos os dias da minha vida ao seu lado e viver todos aniversários contigo, você merece as melhores coisas desse mundo meu bem, eu te amo demais demais.
   <br><br>
   💞 Desde 20/05/25  
   <br>💌 Me declarei 27/10/25  
   <br>💍 Namorando desde 01/01/26
-</div>
 
-<button onclick="tocarMusica()">🎵 Clique aqui para ouvir nossa música</button>
+  <br><br>
+  <button onclick="tocarMusica()">🎵 Ouvir nossa música</button>
+</div>
 
 <div id="player" style="display:none;">
   <iframe width="0" height="0"
@@ -92,24 +110,30 @@ button:hover {
 </div>
 
 <script>
+function abrirCarta() {
+  const carta = document.getElementById("carta");
+  carta.style.visibility = "visible";
+  carta.style.opacity = "1";
+}
+
 function tocarMusica() {
   document.getElementById("player").style.display = "block";
 }
 
-function criarCoracao() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "🌸";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-  document.body.appendChild(heart);
+function criarFlor() {
+  const flor = document.createElement("div");
+  flor.classList.add("flor");
+  flor.innerHTML = "🌸";
+  flor.style.left = Math.random() * 100 + "vw";
+  flor.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  document.body.appendChild(flor);
 
   setTimeout(() => {
-    heart.remove();
+    flor.remove();
   }, 5000);
 }
 
-setInterval(criarCoracao, 300);
+setInterval(criarFlor, 300);
 </script>
 
 </body>
