@@ -7,11 +7,54 @@
 <style>
 body {
   margin: 0;
-  background: linear-gradient(135deg, #1a0026, #330033, #4d004d);
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background: #f8c8dc;
   text-align: center;
-  color: white;
+  color: #5a004f;
   overflow-x: hidden;
+}
+
+/* faixa ondulada no topo */
+.topo {
+  background: #ffb6d9;
+  height: 120px;
+  border-bottom-left-radius: 50% 40px;
+  border-bottom-right-radius: 50% 40px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-top: -70px;
+  color: #ff1493;
+}
+
+.carta {
+  background: #fff0f7;
+  padding: 25px;
+  margin: 40px auto;
+  width: 85%;
+  max-width: 600px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  line-height: 1.6;
+}
+
+button {
+  background: #ff66c4;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff1493;
+  transform: scale(1.05);
+}
+</style>
 }
 
 h1 {
