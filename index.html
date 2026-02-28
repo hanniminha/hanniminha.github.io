@@ -14,6 +14,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Título */
 h1 {
   margin-top: 40px;
   font-size: 28px;
@@ -21,6 +22,7 @@ h1 {
   animation: fadeIn 2s ease-in-out;
 }
 
+/* Card */
 .card {
   background: white;
   width: 85%;
@@ -48,6 +50,7 @@ button:hover {
   background: #e60063;
 }
 
+/* Coração final */
 .final-section {
   height: 60vh;
   display: flex;
@@ -58,7 +61,7 @@ button:hover {
 }
 
 .heart {
-  font-size: 120px;
+  font-size: 130px;
   color: #ff2e7e;
   animation: pulse 4s infinite ease-in-out;
   margin-bottom: 20px;
@@ -71,6 +74,7 @@ button:hover {
   max-width: 500px;
 }
 
+/* Animações */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.15); }
@@ -80,6 +84,21 @@ button:hover {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Florzinhas */
+.flower {
+  position: fixed;
+  top: -10px;
+  font-size: 18px;
+  animation: fall linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
 }
 </style>
 </head>
@@ -91,7 +110,8 @@ button:hover {
 <div class="card">
   <p>
     Oii meu amor, passando aqui pra te desejar um feliz aniversário.
-    Eu te amo demais. Sou muito grata por ter você na minha vida.
+    Eu te amo demais, mais do que consigo explicar.
+    Sou muito grata por ter você na minha vida.
     Quero viver todos os aniversários ao seu lado.
     Você merece as melhores coisas desse mundo.
   </p>
@@ -103,14 +123,25 @@ button:hover {
 <section class="final-section">
   <div class="heart">❤</div>
   <p class="final-message">
-    Meu amor, que esse seja apenas mais um capítulo da nossa história.
-    Eu escolho você todos os dias, em todas as versões do futuro.
+    Meu amor, você é o meu lugar favorito no mundo.
+    Que esse seja apenas o começo de todos os aniversários
+    que ainda vamos celebrar juntas.
   </p>
 </section>
 
 <script>
 function tocarMusica() {
   document.getElementById("musica").play();
+}
+
+/* Criar florzinhas */
+for (let i = 0; i < 20; i++) {
+  let flower = document.createElement("div");
+  flower.className = "flower";
+  flower.innerHTML = "🌸";
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+  document.body.appendChild(flower);
 }
 </script>
 
