@@ -2,45 +2,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Para Jennifer 💖</title>
+<title>Para Jennifer 💗</title>
 
 <style>
-body { <div class="topo"></div>
+body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #f8c8dc;
+  font-family: 'Segoe UI', sans-serif;
+  background: #ffe6f0;
   text-align: center;
-  color: #5a004f;
   overflow-x: hidden;
 }
 
-/* faixa ondulada no topo */
-.topo {
-  background: #ffb6d9;
-  height: 120px;
-  border-bottom-left-radius: 50% 40px;
-  border-bottom-right-radius: 50% 40px;
+/* enfeite suave no topo */
+body::before {
+  content: "🌸  ✨  💗  🌷  ✨  🌸";
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  font-size: 22px;
+  opacity: 0.2;
 }
 
 h1 {
-  font-size: 42px;
-  margin-top: -70px;
-  color: #ff1493;
-}
-
-.carta {
-  background: #fff0f7;
-  padding: 25px;
-  margin: 40px auto;
-  width: 85%;
-  max-width: 600px;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  line-height: 1.6;
+  margin-top: 70px;
+  font-size: 38px;
+  color: #ff4da6;
+  text-shadow: 0 0 8px #ffb6d9;
 }
 
 button {
-  background: #ff66c4;
+  margin-top: 20px;
+  background: #ff85c1;
   border: none;
   padding: 12px 30px;
   border-radius: 30px;
@@ -48,93 +41,91 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(255,133,193,0.4);
 }
 
 button:hover {
-  background: #ff1493;
-  transform: scale(1.05);
-}
-</style>
-}
-
-h1 {
-  margin-top: 60px;
-  font-size: 42px;
-  color: #ff66c4;
-  text-shadow: 0 0 10px #ff66c4, 0 0 20px #ff1493;
-}
-
-button {
-  margin-top: 30px;
-  background: #ff1493;
-  border: none;
-  padding: 14px 30px;
-  border-radius: 30px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #ff66c4;
+  background: #ff4da6;
   transform: scale(1.05);
 }
 
 .carta {
   display: none;
+  background: white;
   margin: 40px auto;
-  padding: 25px;
+  padding: 30px;
   width: 85%;
-  max-width: 600px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  line-height: 1.6;
-  animation: aparecer 1.5s ease forwards;
+  max-width: 520px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(255,105,180,0.2);
+  line-height: 1.8;
+  color: #555;
+  animation: aparecer 1s ease forwards;
 }
 
 @keyframes aparecer {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+  from {opacity: 0; transform: scale(0.95);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+/* parte de baixo preenchida */
+.historia {
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: #ffd6ea;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+.historia h2 {
+  color: #ff4da6;
+}
+
+.frase-final {
+  margin-top: 20px;
+  font-style: italic;
+  color: #d63384;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Feliz Aniversário, Jennifer ✨💖</h1>
+<h1>Feliz Aniversário, Jennifer 💖</h1>
 
-<button onclick="mostrarCarta()">Abrir minha carta 💌</button>
+<button onclick="mostrarCarta()">Abrir minha cartinha 💌</button>
 
 <div class="carta" id="carta">
-  Oii meu amor, passando aqui pra te desejar um feliz aniversário e dizer que eu te amo demais.<br><br>
+Oii meu amor, passando aqui pra te desejar um feliz aniversário e dizer que eu te amo demais.<br><br>
 
-  Eu queria muito estar com você agora mesmo. Eu te amo mais do que consigo explicar.<br><br>
+Eu queria muito estar com você agora mesmo. Eu te amo mais do que consigo explicar.<br><br>
 
-  Sou muito grata por ter você na minha vida. Obrigada por sempre me ajudar e por sempre estar comigo.<br><br>
+Sou muito grata por ter você na minha vida. Obrigada por sempre me ajudar e por sempre estar comigo.<br><br>
 
-  Eu te amo muito, Jennifer. Obrigada por ser minha gatinha, minha namorada, meu amor todinho.<br><br>
+Eu te amo muito, Jennifer. Obrigada por ser minha gatinha, minha namorada, meu amor todinho.<br><br>
 
-  Eu te amo muito. Quero viver todos os dias da minha vida ao seu lado e viver todos os aniversários contigo.<br><br>
+Eu te amo muito. Quero viver todos os dias da minha vida ao seu lado e viver todos os aniversários contigo.<br><br>
 
-  Você merece as melhores coisas desse mundo, meu bem. Eu te amo demais, demais. 💖
+Você merece as melhores coisas desse mundo, meu bem. Eu te amo demais, demais. 💗
 </div>
 
-<!-- Música -->
-<div style="margin-top:30px; display:none;" id="musica">
-  <iframe width="250" height="140"
-  src="https://www.youtube.com/embed/GJNdR_MKuDM?autoplay=1&loop=1&playlist=GJNdR_MKuDM"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen>
-  </iframe>
+<div class="historia">
+  <h2>Nossa História 💞</h2>
+
+  <p>
+  Começamos a conversar: 20/05/25 💗<br>
+  Eu me declarei: 27/10/25 💌<br>
+  Começamos a namorar: 01/01/26 ✨
+  </p>
+
+  <p class="frase-final">
+  "Que esse seja só mais um de infinitos aniversários ao seu lado."
+  </p>
 </div>
 
 <script>
 function mostrarCarta() {
   document.getElementById("carta").style.display = "block";
-  document.getElementById("musica").style.display = "block";
 }
 </script>
 
