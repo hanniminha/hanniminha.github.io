@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Feliz Aniversário 💖</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
@@ -14,16 +16,38 @@ body {
   overflow-x: hidden;
 }
 
-/* Título */
 h1 {
   margin-top: 40px;
-  font-size: 28px;
+  font-size: 32px;
   color: #ff2e7e;
+  font-family: 'Pacifico', cursive;
   animation: fadeIn 2s ease-in-out;
 }
 
-/* Card */
+.subtitle {
+  color: #555;
+  margin-top: 10px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.open-btn {
+  background: #ff2e7e;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.open-btn:hover {
+  background: #e60063;
+}
+
 .card {
+  display: none;
   background: white;
   width: 85%;
   max-width: 500px;
@@ -31,33 +55,25 @@ h1 {
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  animation: fadeIn 3s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
-button {
+.music-btn {
   background: #ff2e7e;
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 25px;
+  padding: 10px 18px;
+  border-radius: 20px;
   cursor: pointer;
-  font-size: 16px;
   margin-top: 15px;
-  transition: 0.3s;
 }
 
-button:hover {
-  background: #e60063;
-}
-
-/* Coração final */
 .final-section {
   height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
 }
 
 .heart {
@@ -74,7 +90,18 @@ button:hover {
   max-width: 500px;
 }
 
-/* Animações */
+.flower {
+  position: fixed;
+  top: -10px;
+  font-size: 18px;
+  animation: fall linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh); }
+}
+
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.15); }
@@ -85,29 +112,17 @@ button:hover {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
-/* Florzinhas */
-.flower {
-  position: fixed;
-  top: -10px;
-  font-size: 18px;
-  animation: fall linear infinite;
-  opacity: 0.7;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(100vh);
-  }
-}
 </style>
 </head>
 
 <body>
 
 <h1>Feliz Aniversário, minha Jennifer 💖</h1>
+<p class="subtitle">Eu preparei algo especial pra você… 💌 Clique abaixo quando estiver pronta.</p>
 
-<div class="card">
+<button class="open-btn" onclick="abrirCarta()">💌 Abrir minha carta</button>
+
+<div class="card" id="carta">
   <p>
     Oii meu amor, passando aqui pra te desejar um feliz aniversário.
     Eu te amo demais, mais do que consigo explicar.
@@ -116,7 +131,7 @@ button:hover {
     Você merece as melhores coisas desse mundo.
   </p>
 
-  <button onclick="tocarMusica()">🎵 Ouvir nossa música</button>
+  <button class="music-btn" onclick="tocarMusica()">🎵 Ouvir nossa música</button>
   <audio id="musica" src="sua-musica.mp3"></audio>
 </div>
 
@@ -130,11 +145,14 @@ button:hover {
 </section>
 
 <script>
+function abrirCarta() {
+  document.getElementById("carta").style.display = "block";
+}
+
 function tocarMusica() {
   document.getElementById("musica").play();
 }
 
-/* Criar florzinhas */
 for (let i = 0; i < 20; i++) {
   let flower = document.createElement("div");
   flower.className = "flower";
