@@ -149,7 +149,13 @@ function abrirCarta() {
   document.getElementById("carta").style.display = "block";
 }
 
+function tocarMusica() { <button onclick="tocarMusica()">🎵 Ouvir “Idiota” no Spotify</button>
+
+<script>
 function tocarMusica() {
+  window.open("https://open.spotify.com/track/6EDj1nbl9wo6ivGI1t59G4", "_blank");
+}
+</script>
   document.getElementById("musica").play();
 }
 
