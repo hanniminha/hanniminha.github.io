@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pra Você 💖</title>
+<title>Feliz Aniversário 💖</title>
 
 <style>
 body {
@@ -11,53 +11,119 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(#f8c8dc, #f4a7c0);
   text-align: center;
-  padding-top: 60px;
+  overflow-x: hidden;
 }
 
 h1 {
-  color: #ff2e7e;
+  margin-top: 40px;
   font-size: 28px;
+  color: #ff2e7e;
 }
 
-button {
+.subtitle {
+  color: #555;
+  margin-top: 10px;
+}
+
+.open-btn {
   background: #ff2e7e;
   color: white;
   border: none;
   padding: 12px 22px;
   border-radius: 25px;
-  font-size: 16px;
   cursor: pointer;
+  font-size: 16px;
   margin-top: 20px;
 }
 
-button:hover {
-  background: #e60063;
+.card {
+  display: none;
+  background: white;
+  width: 85%;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.final-section {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart {
+  font-size: 120px;
+  color: #ff2e7e;
+  animation: pulse 3s infinite;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.final-message {
+  font-size: 18px;
+  color: white;
+  max-width: 500px;
 }
 
 #player {
   display: none;
   margin-top: 20px;
 }
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
 </style>
 </head>
 
 <body>
 
-<h1>Tem uma coisa pra você 💌</h1>
+<h1>Feliz Aniversário, minha Jennifer 💖</h1>
+<p class="subtitle">Eu preparei algo especial pra você… 💌</p>
 
-<button onclick="mostrarMusica()">🎵 Ouvir nossa música</button>
+<button class="open-btn" onclick="abrirCarta()">💌 Abrir minha carta</button>
 
-<div id="player">
-  <iframe width="300" height="170"
-    src="https://www.youtube.com/embed/46w_wj1hXac?autoplay=1"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-    style="border-radius:15px;">
-  </iframe>
+<div class="card" id="carta">
+  <p>
+    Oii meu amor, passando aqui pra te desejar um feliz aniversário.
+    Eu te amo demais, mais do que consigo explicar.
+    Sou muito grata por ter você na minha vida.
+    Quero viver todos os aniversários ao seu lado.
+    Você merece as melhores coisas desse mundo.
+  </p>
+
+  <button class="open-btn" onclick="mostrarMusica()">🎵 Ouvir nossa música</button>
+
+  <div id="player">
+    <iframe width="300" height="170"
+      src="https://www.youtube.com/embed/46w_wj1hXac?autoplay=1"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      style="border-radius:15px;">
+    </iframe>
+  </div>
 </div>
 
+<section class="final-section">
+  <div class="heart">❤</div>
+  <p class="final-message">
+    Que esse seja apenas o começo de todos os aniversários
+    que ainda vamos celebrar juntas 💖
+  </p>
+</section>
+
 <script>
+function abrirCarta() {
+  document.getElementById("carta").style.display = "block";
+}
+
 function mostrarMusica() {
   document.getElementById("player").style.display = "block";
 }
