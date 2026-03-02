@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feliz Aniversário 💖</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<title>Pra Você 💖</title>
 
 <style>
 body {
@@ -13,159 +11,55 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(#f8c8dc, #f4a7c0);
   text-align: center;
-  overflow-x: hidden;
+  padding-top: 60px;
 }
 
 h1 {
-  margin-top: 40px;
-  font-size: 32px;
   color: #ff2e7e;
-  font-family: 'Pacifico', cursive;
-  animation: fadeIn 2s ease-in-out;
+  font-size: 28px;
 }
 
-.subtitle {
-  color: #555;
-  margin-top: 10px;
-  animation: fadeIn 3s ease-in-out;
-}
-
-.open-btn {
+button {
   background: #ff2e7e;
   color: white;
   border: none;
   padding: 12px 22px;
   border-radius: 25px;
-  cursor: pointer;
   font-size: 16px;
+  cursor: pointer;
   margin-top: 20px;
-  transition: 0.3s;
 }
 
-.open-btn:hover {
+button:hover {
   background: #e60063;
 }
 
-.card {
+#player {
   display: none;
-  background: white;
-  width: 85%;
-  max-width: 500px;
-  margin: 30px auto;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  animation: fadeIn 1s ease-in-out;
-}
-
-.music-btn {
-  background: #ff2e7e;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-.final-section {
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.heart {
-  font-size: 130px;
-  color: #ff2e7e;
-  animation: pulse 4s infinite ease-in-out;
-  margin-bottom: 20px;
-  opacity: 0.85;
-}
-
-.final-message {
-  font-size: 18px;
-  color: white;
-  max-width: 500px;
-}
-
-.flower {
-  position: fixed;
-  top: -10px;
-  font-size: 18px;
-  animation: fall linear infinite;
-  opacity: 0.7;
-}
-
-@keyframes fall {
-  to { transform: translateY(100vh); }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-  100% { transform: scale(1); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  margin-top: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Feliz Aniversário, minha Jennifer 💖</h1>
-<p class="subtitle">Eu preparei algo especial pra você… 💌 Clique abaixo quando estiver pronta.</p>
+<h1>Tem uma coisa pra você 💌</h1>
 
-<button class="open-btn" onclick="abrirCarta()">💌 Abrir minha carta</button>
+<button onclick="mostrarMusica()">🎵 Ouvir nossa música</button>
 
-<div class="card" id="carta">
-  <p>
-    Oii meu amor, passando aqui pra te desejar um feliz aniversário.
-    Eu te amo demais, mais do que consigo explicar.
-    Sou muito grata por ter você na minha vida.
-    Quero viver todos os aniversários ao seu lado.
-    Você merece as melhores coisas desse mundo.
-  </p>
-
-  <button class="music-btn" onclick="tocarMusica()">🎵 Ouvir nossa música</button>
-  <audio id="musica" src="sua-musica.mp3"></audio>
+<div id="player">
+  <iframe width="300" height="170"
+    src="https://www.youtube.com/embed/46w_wj1hXac?autoplay=1"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+    style="border-radius:15px;">
+  </iframe>
 </div>
 
-<section class="final-section">
-  <div class="heart">❤</div>
-  <p class="final-message">
-    Meu amor, você é o meu lugar favorito no mundo.
-    Que esse seja apenas o começo de todos os aniversários
-    que ainda vamos celebrar juntas.
-  </p>
-</section>
-
 <script>
-function abrirCarta() {
-  document.getElementById("carta").style.display = "block";
-}
-
-function tocarMusica() { <button onclick="tocarMusica()">🎵 Ouvir “Idiota” no Spotify</button>
-
-<script>
-function tocarMusica() {
-  window.open("https://open.spotify.com/track/6EDj1nbl9wo6ivGI1t59G4", "_blank");
-}
-</script>
-  document.getElementById("musica").play();
-}
-
-for (let i = 0; i < 20; i++) {
-  let flower = document.createElement("div");
-  flower.className = "flower";
-  flower.innerHTML = "🌸";
-  flower.style.left = Math.random() * 100 + "vw";
-  flower.style.animationDuration = (5 + Math.random() * 5) + "s";
-  document.body.appendChild(flower);
+function mostrarMusica() {
+  document.getElementById("player").style.display = "block";
 }
 </script>
 
